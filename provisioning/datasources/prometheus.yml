@@ -4,6 +4,6 @@ datasources:
   - name: Prometheus
     type: prometheus
     access: proxy
-    url: http://metrics:9090 # TODO metrics or prometeus here ? 
+    url: http://metrics:9090
     readOnly: False
     isDefault: True
