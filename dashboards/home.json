@@ -15,7 +15,7 @@
     "editable": true,
     "gnetId": null,
     "graphTooltip": 0,
-    "id": 5,
+    "id": 4,
     "links": [],
     "panels": [
       {
@@ -34,7 +34,7 @@
         },
         "id": 5,
         "options": {
-          "content": "<div style=\"background-image: url('https://ai-r.com/wp-content/themes/air/assets/images/hero-bg.jpg');\">\n<h1 style=\"color:black;\"> Welcome to Cogment Dashboard </h1>\n<h3 style=\"color:black;\">See various dashboard to follow the agent and environment performances. Cogment dashboard also allows to follow the learning of various agent in a distributed and multi-agent environment.</h3>\n",
+          "content": "<div style=\"background-image: url('https://ai-r.com/wp-content/themes/air/assets/images/hero-bg.jpg');\">\n<h1 style=\"color:black;\"> Welcome to Cogment Dashboard </h1>\n<h3 style=\"color:black;\">See various dashboard to follow agent and environment performances. Cogment dashboard also allows to follow the learning of various agents in a distributed and multi-agent environment.</h3>\n",
           "mode": "html"
         },
         "pluginVersion": "7.3.5",
@@ -45,7 +45,6 @@
       },
       {
         "datasource": null,
-        "description": "See various dashboard to follow the agent  and environment performances,. Cogment dashboard also allows to follow the learning of various agent in a distributed and multi-agent   environment.",
         "fieldConfig": {
           "defaults": {
             "custom": {}
@@ -138,5 +137,5 @@
     "timezone": "browser",
     "title": "Cogment Dashboard Home",
     "uid": "m8xooPJGk",
-    "version": 3
+    "version": 1
   }
