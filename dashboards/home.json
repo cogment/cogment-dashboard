@@ -37,7 +37,7 @@
           "content": "<div style=\"background-image: url('https://ai-r.com/wp-content/themes/air/assets/images/hero-bg.jpg');\">\n<h1 style=\"color:black;\"> Welcome to Cogment Dashboard </h1>\n<h3 style=\"color:black;\">See various dashboard to follow agent and environment performances. Cogment dashboard also allows to follow the learning of various agents in a distributed and multi-agent environment.</h3>\n",
           "mode": "html"
         },
-        "pluginVersion": "7.3.5",
+        "pluginVersion": "7.3.7",
         "timeFrom": null,
         "timeShift": null,
         "title": "Home",
@@ -51,21 +51,21 @@
           },
           "overrides": []
         },
-        "folderId": 0,
+        "folderId": 1,
         "gridPos": {
           "h": 15,
           "w": 12,
           "x": 0,
           "y": 4
         },
-        "headings": true,
-        "id": 3,
+        "headings": false,
+        "id": 123124,
         "limit": 30,
         "links": [],
         "query": "",
-        "recent": true,
-        "search": false,
-        "starred": true,
+        "recent": false,
+        "search": true,
+        "starred": false,
         "tags": [],
         "title": "Cogment Dashboards",
         "type": "dashlist"
@@ -89,7 +89,7 @@
           "content": "\n<div style=\"background-image: url('https://ai-r.com/wp-content/themes/air/assets/images/hero-bg.jpg');\">\n<h1 style=\"color:black;\"> Our latest news </h1>\n<a style=\"color:blue;\" style=\"font-size:160%;\" href=\"https://ai-r.com/news/\">We need to redefine our relationship to AI.</a><br />\n<img src=\"https://ai-r.com/wp-content/uploads/2020/04/confiancepost-1024x1024.png\">\n\n",
           "mode": "html"
         },
-        "pluginVersion": "7.3.5",
+        "pluginVersion": "7.3.7",
         "timeFrom": null,
         "timeShift": null,
         "title": "Cogment News",
@@ -104,8 +104,8 @@
       "list": []
     },
     "time": {
-      "from": "2020-12-15T08:27:14.479Z",
-      "to": "2020-12-15T20:27:14.479Z"
+      "from": "now-5m",
+      "to": "now"
     },
     "timepicker": {
       "hidden": true,
