@@ -15,7 +15,6 @@
     "editable": true,
     "gnetId": null,
     "graphTooltip": 0,
-    "id": 4,
     "links": [],
     "panels": [
       {
@@ -56,7 +55,7 @@
           "alertThreshold": true
         },
         "percentage": false,
-        "pluginVersion": "7.3.5",
+        "pluginVersion": "7.3.7",
         "pointradius": 2,
         "points": false,
         "renderer": "flot",
@@ -151,7 +150,7 @@
           "alertThreshold": true
         },
         "percentage": false,
-        "pluginVersion": "7.3.5",
+        "pluginVersion": "7.3.7",
         "pointradius": 2,
         "points": false,
         "renderer": "flot",
@@ -218,7 +217,9 @@
     "refresh": "",
     "schemaVersion": 26,
     "style": "dark",
-    "tags": [],
+    "tags": [
+      "dashboard"
+    ],
     "templating": {
       "list": []
     },
@@ -230,5 +231,5 @@
     "timezone": "",
     "title": "Agent Performance",
     "uid": "b-YYcEJGz",
-    "version": 3
+    "version": 1
   }

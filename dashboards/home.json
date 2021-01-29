@@ -15,7 +15,6 @@
     "editable": true,
     "gnetId": null,
     "graphTooltip": 0,
-    "id": 4,
     "links": [],
     "panels": [
       {
@@ -66,7 +65,9 @@
         "recent": false,
         "search": true,
         "starred": false,
-        "tags": [],
+        "tags": [
+          "dashboard"
+        ],
         "title": "Cogment Dashboards",
         "type": "dashlist"
       },

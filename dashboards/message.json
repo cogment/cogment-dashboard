@@ -211,7 +211,9 @@
     ],
     "schemaVersion": 26,
     "style": "dark",
-    "tags": [],
+    "tags": [
+        "dashboard"
+      ],
     "templating": {
       "list": []
     },
