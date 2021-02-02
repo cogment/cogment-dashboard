@@ -15,7 +15,6 @@
     "editable": true,
     "gnetId": null,
     "graphTooltip": 0,
-    "id": 6,
     "links": [],
     "panels": [
       {
@@ -56,7 +55,7 @@
           "alertThreshold": true
         },
         "percentage": false,
-        "pluginVersion": "7.3.5",
+        "pluginVersion": "7.3.7",
         "pointradius": 2,
         "points": false,
         "renderer": "flot",
@@ -151,7 +150,7 @@
           "alertThreshold": true
         },
         "percentage": false,
-        "pluginVersion": "7.3.5",
+        "pluginVersion": "7.3.7",
         "pointradius": 2,
         "points": false,
         "renderer": "flot",
@@ -163,7 +162,7 @@
           {
             "expr": "rate(actor_received_messages_total[5m])",
             "interval": "",
-            "legendFormat": "",
+            "legendFormat": "{{actor_class}}  {{name}}",
             "refId": "A"
           }
         ],
@@ -212,8 +211,8 @@
     "schemaVersion": 26,
     "style": "dark",
     "tags": [
-        "dashboard"
-      ],
+      "dashboard"
+    ],
     "templating": {
       "list": []
     },

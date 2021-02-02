@@ -18,6 +18,63 @@
     "links": [],
     "panels": [
       {
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {},
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "id": 4,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "mean"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "7.3.7",
+        "targets": [
+          {
+            "expr": "rate(actor_decide_processing_seconds_sum[2m]) / rate(actor_decide_processing_seconds_count[2m])",
+            "interval": "",
+            "legendFormat": "{{job}} {{name}}",
+            "refId": "A"
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Agent decide time",
+        "type": "stat"
+      },
+      {
         "aliasColors": {},
         "bars": false,
         "dashLength": 10,
@@ -34,11 +91,11 @@
         "gridPos": {
           "h": 8,
           "w": 12,
-          "x": 0,
+          "x": 12,
           "y": 0
         },
         "hiddenSeries": false,
-        "id": 4,
+        "id": 6,
         "legend": {
           "avg": false,
           "current": false,
@@ -65,9 +122,9 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "rate(actor_decide_processing_seconds_created[2m]) / rate(actor_decide_processing_seconds_count[2m])",
+            "expr": "sum by (job) (rate(actor_decide_processing_seconds_sum[2m]) / rate(actor_decide_processing_seconds_count[2m]))",
             "interval": "",
-            "legendFormat": "",
+            "legendFormat": "{{job}}",
             "refId": "A"
           }
         ],
@@ -75,7 +132,7 @@
         "timeFrom": null,
         "timeRegions": [],
         "timeShift": null,
-        "title": "Agent decide time",
+        "title": "Decide time by agent type",
         "tooltip": {
           "shared": true,
           "sort": 0,
@@ -99,7 +156,7 @@
             "show": true
           },
           {
-            "format": "s",
+            "format": "short",
             "label": null,
             "logBase": 1,
             "max": null,
@@ -111,6 +168,129 @@
           "align": false,
           "alignLevel": null
         }
+      },
+      {
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {},
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 8
+        },
+        "id": 2,
+        "options": {
+          "reduceOptions": {
+            "calcs": [
+              "mean"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "7.3.7",
+        "targets": [
+          {
+            "expr": "actor_started_total",
+            "interval": "",
+            "legendFormat": "Started {{job}}",
+            "refId": "A"
+          },
+          {
+            "expr": "actor_ended_total",
+            "interval": "",
+            "legendFormat": "Ended {{job}}",
+            "refId": "B"
+          },
+          {
+            "expr": "actor_started_total - actor_ended_total",
+            "interval": "",
+            "legendFormat": "Running  {{job}}",
+            "refId": "C"
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Actor started and ended",
+        "type": "gauge"
+      },
+      {
+        "datasource": null,
+        "fieldConfig": {
+          "defaults": {
+            "custom": {},
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 8
+        },
+        "id": 8,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "mean"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "7.3.7",
+        "targets": [
+          {
+            "expr": "sum by (job) (rate(actor_decide_processing_seconds_sum[2m]) / rate(actor_decide_processing_seconds_count[2m]))",
+            "interval": "",
+            "legendFormat": "{{job}}",
+            "refId": "A"
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Decide time by agent type",
+        "type": "stat"
       },
       {
         "aliasColors": {},
@@ -129,11 +309,11 @@
         "gridPos": {
           "h": 8,
           "w": 12,
-          "x": 0,
-          "y": 8
+          "x": 12,
+          "y": 16
         },
         "hiddenSeries": false,
-        "id": 2,
+        "id": 7,
         "legend": {
           "avg": false,
           "current": false,
@@ -160,23 +340,17 @@
         "steppedLine": false,
         "targets": [
           {
-            "expr": "sum by (job) (actor_started_total)",
+            "expr": "sum by (job, name) (rate(actor_decide_processing_seconds_sum[2m]) / rate(actor_decide_processing_seconds_count[2m]))",
             "interval": "",
-            "legendFormat": "",
+            "legendFormat": "{{job}} {{name}}",
             "refId": "A"
-          },
-          {
-            "expr": "sum by (job) (actor_ended_total)",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "B"
           }
         ],
         "thresholds": [],
         "timeFrom": null,
         "timeRegions": [],
         "timeShift": null,
-        "title": "Actor started and ended",
+        "title": "Decide time by agent",
         "tooltip": {
           "shared": true,
           "sort": 0,
@@ -224,7 +398,7 @@
       "list": []
     },
     "time": {
-      "from": "now-1h",
+      "from": "now-5m",
       "to": "now"
     },
     "timepicker": {},
