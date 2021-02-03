@@ -67,7 +67,7 @@
           {
             "expr": "sum by (job) (rate(environment_update_count_per_trial_sum[1m]) / rate(environment_update_count_per_trial_count[1m]))",
             "interval": "",
-            "legendFormat": "",
+            "legendFormat": "{{job}}",
             "refId": "B"
           }
         ],
