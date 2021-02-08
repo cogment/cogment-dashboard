@@ -2,17 +2,19 @@
 version: '3.9'
 
 services:
-  cogment-dashboard:
-    image: cogment/cogment-dashboard:latest
+  dashboard:
+    image: cogment/dashboard:latest
     build:
       context: grafana
     ports:
       - 3000:3000
     depends_on:
-      - cogment-metrics
+      - metrics
 
-  cogment-metrics:
-    image: prom/prometheus:latest
+  metrics:
+    image: cogment/metrics:latest
+    build:
+      context: prometheus
     command:
       - --config.file=/etc/prometheus/prometheus.yml
     volumes:
