@@ -38,9 +38,9 @@ release:semantic-release:
     - git push downstream ${CI_COMMIT_BRANCH}
     - npx semantic-release
     - git pull downstream ${CI_COMMIT_BRANCH}
-    - git push origin ${CI_COMMIT_BRANCH}
+    - git push git@gitlab.com:ai-r/cogment-dashboard.git ${CI_COMMIT_BRANCH}
     - git fetch downstream --tags
-    - git push --tags
+    - git push git@gitlab.com:ai-r/cogment-dashboard.git --tags
   only:
     - main
     - next
