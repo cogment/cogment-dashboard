@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/cogment/cogment-dashboard/compare/v1.1.0...v1.1.1) (2021-02-08)
+
+
+### Bug Fixes
+
+* **ci:** push to ssh url ([bfbad3a](https://github.com/cogment/cogment-dashboard/commit/bfbad3a5f71674ca2d5e98259f6fc19bc3678ac7))
+
 # [1.1.0](https://github.com/cogment/cogment-dashboard/compare/v1.0.1...v1.1.0) (2021-02-08)
 
 
