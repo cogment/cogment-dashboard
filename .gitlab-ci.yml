@@ -15,7 +15,7 @@ build:
     - docker:dind
   variables:
     DOCKER_HOST: tcp://docker:2376
-    DOCKER_TLS_CERTDIR: "/certs"
+    DOCKER_TLS_CERTDIR: '/certs'
   before_script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
   script:
@@ -31,7 +31,7 @@ publish:
     - docker:dind
   variables:
     DOCKER_HOST: tcp://docker:2376
-    DOCKER_TLS_CERTDIR: "/certs"
+    DOCKER_TLS_CERTDIR: '/certs'
   before_script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
   script:
@@ -41,7 +41,6 @@ publish:
   only:
     - master
 
-
 release:
   stage: deploy
   needs: []
@@ -50,7 +49,7 @@ release:
     - docker:dind
   variables:
     DOCKER_HOST: tcp://docker:2376
-    DOCKER_TLS_CERTDIR: "/certs"
+    DOCKER_TLS_CERTDIR: '/certs'
   before_script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
   script:
