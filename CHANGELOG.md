@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/cogment/cogment-dashboard/compare/v1.0.1...v1.1.0) (2021-02-08)
+
+
+### Features
+
+* **ci:** keep downstream and origin in sync ([719f94e](https://github.com/cogment/cogment-dashboard/commit/719f94ee8e20dfca158d64b844f057f7d38af274))
+
 ## [1.0.1](https://github.com/cogment/cogment-dashboard/compare/v1.0.0...v1.0.1) (2021-02-08)
 
 
