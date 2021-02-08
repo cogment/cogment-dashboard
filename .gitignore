@@ -4,3 +4,6 @@
 
 # node.js / npm
 node_modules
+
+# repo specific
+secrets

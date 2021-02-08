@@ -29,32 +29,7 @@ module.exports = {
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
     '@semantic-release/changelog',
-    [
-      '@semantic-release/npm',
-      {
-        prepare: true,
-        npmPublish: true,
-      },
-    ],
-    [
-      '@semantic-release/github',
-      {
-        assets: [
-          {
-            path: 'dist/cogment.js',
-            label: 'CommonJS2 bundle',
-          },
-          {
-            path: 'dist/cogment.esm.js',
-            label: 'ESM bundle',
-          },
-          {
-            path: 'dist/cogment.umd.js',
-            label: 'UMD bundle',
-          },
-        ],
-      },
-    ],
+    '@semantic-release/github',
     [
       '@semantic-release/exec',
       {

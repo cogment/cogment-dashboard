@@ -1,15 +1,17 @@
 {
-  "name": "@cogment/cogment-dashboard",
-  "version": "1.0.0",
+  "name": "@cogment/dashboard",
+  "version": "0.0.0-development",
   "description": "",
-  "keywords": [],
-  "homepage": "https://gitlab.com/ai-r/cogment-dashboard#readme",
+  "keywords": [
+    "cogment"
+  ],
+  "homepage": "https://github.com/cogment/cogment-dashboard#readme",
   "bugs": {
     "url": "https://gitlab.com/ai-r/cogment-dashboard/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.com/ai-r/cogment-dashboard.git"
+    "url": "https://cogment/cogment-dashboard.git"
   },
   "license": "SEE LICENSE IN LICENSE.md",
   "author": "Artificial Intelligence Redefined <dev+cogment@ai-r.com>",
@@ -23,6 +25,7 @@
     "lint:prettier": "prettier .",
     "lint:prettier:check": "npm run lint:prettier -- --check",
     "lint:prettier:fix": "npm run lint:prettier -- --write",
+    "semantic-release": "semantic-release",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
@@ -52,5 +55,8 @@
     "prettier-plugin-sh": "^0.6.0",
     "rimraf": "^3.0.2",
     "semantic-release": "^17.3.8"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
