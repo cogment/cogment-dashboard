@@ -1,0 +1,56 @@
+{
+  "name": "@cogment/cogment-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://gitlab.com/ai-r/cogment-dashboard#readme",
+  "bugs": {
+    "url": "https://gitlab.com/ai-r/cogment-dashboard/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com/ai-r/cogment-dashboard.git"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
+  "author": "",
+  "scripts": {
+    "cz": "git-cz",
+    "lint": "npx npm-run-all lint:{prettier,eslint}:check",
+    "lint:eslint": "eslint .",
+    "lint:eslint:check": "npm run lint:eslint",
+    "lint:eslint:fix": "npm run lint:eslint -- --fix",
+    "lint:fix": "npx npm-run-all lint:{prettier,eslint}:fix",
+    "lint:prettier": "prettier .",
+    "lint:prettier:check": "npm run lint:prettier -- --check",
+    "lint:prettier:fix": "npm run lint:prettier -- --write",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/exec": "^5.0.0",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.2.0",
+    "@semantic-release/gitlab": "^6.0.9",
+    "commitizen": "^4.2.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-json": "^2.1.2",
+    "eslint-plugin-notice": "^0.9.10",
+    "eslint-plugin-sonarjs": "^0.5.0",
+    "eslint-plugin-unicorn": "^27.0.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "npm-merge-driver": "^2.3.6",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "prettier-plugin-packagejson": "^2.2.9",
+    "prettier-plugin-properties": "^0.1.0",
+    "prettier-plugin-sh": "^0.6.0",
+    "rimraf": "^3.0.2",
+    "semantic-release": "^17.3.8"
+  }
+}
