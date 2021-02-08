@@ -37,6 +37,10 @@ release:semantic-release:
     - git fetch downstream ${CI_COMMIT_BRANCH}
     - git push downstream ${CI_COMMIT_BRANCH}
     - npx semantic-release
+    - git pull downstream ${CI_COMMIT_BRANCH}
+    - git push origin ${CI_COMMIT_BRANCH}
+    - git fetch downstream --tags
+    - git push --tags
   only:
     - main
     - next
