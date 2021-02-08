@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://cogment/cogment-dashboard.git"
+    "url": "https://github.com/cogment/cogment-dashboard.git"
   },
   "license": "SEE LICENSE IN LICENSE.md",
   "author": "Artificial Intelligence Redefined <dev+cogment@ai-r.com>",
