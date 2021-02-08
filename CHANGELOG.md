@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/cogment/cogment-dashboard/compare/v1.0.0...v1.0.1) (2021-02-08)
+
+
+### Bug Fixes
+
+* **semantic-release:** run npm plugin, do not publish to npm ([435d034](https://github.com/cogment/cogment-dashboard/commit/435d034903cb94a46e9490ee383b09d10f8a8e9c))
+
 # 1.0.0 (2021-02-08)
 
 
