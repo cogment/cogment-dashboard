@@ -24,16 +24,15 @@ services:
       - cadvisor
 
   cadvisor:
+    privileged: true
+    devices:
+      - /dev/kmsg
     image: gcr.io/cadvisor/cadvisor:latest
+    ports:
+      - 9088:8080
     volumes:
       - /:/rootfs:ro
-      - /var/run:/var/run:rw
+      - /var/run:/var/run:ro
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
-    depends_on:
-      - redis
-
-  redis:
-    image: redis:latest
-    ports:
-      - 6379:6379
+      - /dev/disk:/dev/disk:ro
