@@ -5,9 +5,9 @@
   "keywords": [
     "cogment"
   ],
-  "homepage": "https://github.com/cogment/cogment-dashboard#readme",
+  "homepage": "https://github.com/cogment/cogment-dashboard",
   "bugs": {
-    "url": "https://gitlab.com/ai-r/cogment-dashboard/issues"
+    "url": "https://github.com/cogment/cogment-dashboard/issues"
   },
   "repository": {
     "type": "git",
