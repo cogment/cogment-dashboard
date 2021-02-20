@@ -1,3 +1,10 @@
+## [1.1.2-alpha.1](https://github.com/cogment/cogment-dashboard/compare/v1.1.1...v1.1.2-alpha.1) (2021-02-20)
+
+
+### Bug Fixes
+
+* **grafana:** revert to noauth login for local development ([b0569ee](https://github.com/cogment/cogment-dashboard/commit/b0569eebc23af919ba356d9a873d227611b78990))
+
 ## [1.1.1](https://github.com/cogment/cogment-dashboard/compare/v1.1.0...v1.1.1) (2021-02-08)
 
 
