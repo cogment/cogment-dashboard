@@ -58,3 +58,4 @@ release:docker:
     - main
     - next
     - alpha
+    - beta
