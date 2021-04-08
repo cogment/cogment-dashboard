@@ -1,3 +1,10 @@
+## [1.1.3-beta.1](https://github.com/cogment/cogment-dashboard/compare/v1.1.2...v1.1.3-beta.1) (2021-04-08)
+
+
+### Bug Fixes
+
+* **ci:** trigger semantic-release on beta branch ([9f244d8](https://github.com/cogment/cogment-dashboard/commit/9f244d87a9bdf747485f315b112fd3e490c177fc))
+
 ## [1.1.2](https://github.com/cogment/cogment-dashboard/compare/v1.1.1...v1.1.2) (2021-02-20)
 
 
