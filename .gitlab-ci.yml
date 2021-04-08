@@ -45,6 +45,7 @@ release:semantic-release:
     - main
     - next
     - alpha
+    - beta
 
 release:docker:
   stage: release
