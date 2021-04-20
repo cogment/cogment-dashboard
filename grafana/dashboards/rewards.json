@@ -448,7 +448,7 @@
       "pluginVersion": "7.4.2",
       "targets": [
         {
-          "expr": "sum by (impl_name) (rate(actor_reward_summation[5m])) / sum by (impl_name) (rate(actor_rewards_count_total[5m]))",
+          "expr": "sum by (name) (actor_reward_summation)",
           "interval": "",
           "legendFormat": "{{name}}",
           "refId": "A"
