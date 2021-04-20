@@ -165,7 +165,7 @@
         {
           "expr": "rate(actor_received_messages_total[5m])",
           "interval": "",
-          "legendFormat": "{{actor_class}}  {{name}}",
+          "legendFormat": "{{impl_name}}  {{name}}",
           "refId": "A"
         }
       ],

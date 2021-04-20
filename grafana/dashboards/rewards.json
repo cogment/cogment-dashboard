@@ -260,7 +260,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (actor_class) (rate(actor_reward_summation[5m])) / sum by (actor_class) (rate(actor_rewards_count_total[5m]))",
+          "expr": "sum by (impl_name) (rate(actor_reward_summation[5m])) / sum by (impl_name) (rate(actor_rewards_count_total[5m]))",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -357,7 +357,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (actor_class) (actor_reward_summation)",
+          "expr": "sum by (impl_name) (actor_reward_summation)",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
