@@ -6,7 +6,7 @@
         "datasource": "-- Grafana --",
         "enable": true,
         "hide": true,
-        "iconColor": "rgba(0, 211, 255, 1)",
+        "iconColor": "rgba(255, 180, 0, 1)",
         "name": "Annotations & Alerts",
         "type": "dashboard"
       }
@@ -15,6 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
+  "id": 4,
   "links": [],
   "panels": [
     {
@@ -55,7 +56,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.3.7",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -91,19 +92,21 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:346",
           "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
-          "min": null,
+          "min": "0",
           "show": true
         },
         {
+          "$$hashKey": "object:347",
           "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
-          "min": null,
+          "min": "0",
           "show": true
         }
       ],
@@ -129,8 +132,8 @@
       "gridPos": {
         "h": 8,
         "w": 12,
-        "x": 0,
-        "y": 8
+        "x": 12,
+        "y": 0
       },
       "hiddenSeries": false,
       "id": 2,
@@ -150,7 +153,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.3.7",
+      "pluginVersion": "7.4.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -162,7 +165,7 @@
         {
           "expr": "rate(actor_received_messages_total[5m])",
           "interval": "",
-          "legendFormat": "{{actor_class}}  {{name}}",
+          "legendFormat": "{{impl_name}}  {{name}}",
           "refId": "A"
         }
       ],
@@ -186,19 +189,21 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:414",
           "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
-          "min": null,
+          "min": "0",
           "show": true
         },
         {
+          "$$hashKey": "object:415",
           "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
-          "min": null,
+          "min": "0",
           "show": true
         }
       ],
@@ -208,9 +213,11 @@
       }
     }
   ],
-  "schemaVersion": 26,
+  "schemaVersion": 27,
   "style": "dark",
-  "tags": ["dashboard"],
+  "tags": [
+    "dashboard"
+  ],
   "templating": {
     "list": []
   },

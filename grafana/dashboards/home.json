@@ -6,7 +6,7 @@
         "datasource": "-- Grafana --",
         "enable": true,
         "hide": true,
-        "iconColor": "rgba(0, 211, 255, 1)",
+        "iconColor": "rgba(255, 180, 0, 1)",
         "name": "Annotations & Alerts",
         "type": "dashboard"
       }
@@ -15,6 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
+  "id": null,
   "links": [],
   "panels": [
     {
@@ -27,19 +28,20 @@
       },
       "gridPos": {
         "h": 4,
-        "w": 23,
+        "w": 18,
         "x": 0,
         "y": 0
       },
       "id": 5,
       "options": {
-        "content": "<div style=\"background-image: url('https://ai-r.com/wp-content/themes/air/assets/images/hero-bg.jpg');\">\n<h1 style=\"color:black;\"> Welcome to Cogment Dashboard </h1>\n<h3 style=\"color:black;\">See various dashboard to follow agent and environment performances. Cogment dashboard also allows to follow the learning of various agents in a distributed and multi-agent environment.</h3>\n",
+        "content": "<div>\n<h1 style=\"text-align: center\"> Welcome to Cogment Dashboard </h1>\n<br>\n<h3 style=\"text-align: center\">Below are a list of stat panels you can use to gather insights on your agents</h3>\n</div>",
         "mode": "html"
       },
-      "pluginVersion": "7.3.7",
+      "pluginVersion": "7.4.2",
       "timeFrom": null,
       "timeShift": null,
-      "title": "Home",
+      "title": "",
+      "transparent": true,
       "type": "text"
     },
     {
@@ -50,53 +52,63 @@
         },
         "overrides": []
       },
-      "folderId": 1,
       "gridPos": {
-        "h": 15,
-        "w": 12,
+        "h": 20,
+        "w": 6,
+        "x": 18,
+        "y": 0
+      },
+      "id": 123126,
+      "options": {
+        "content": "\n         <a class=\"twitter-timeline\" data-chrome=\"transparent\" data-theme=\"dark\" href=\"https://twitter.com/AI_Redefined?ref_src=twsrc%5Etfw\">Tweets by AI_Redefined</a> <script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>",
+        "mode": "html"
+      },
+      "pluginVersion": "7.4.2",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 16,
+        "w": 18,
         "x": 0,
         "y": 4
       },
-      "headings": false,
       "id": 123124,
-      "limit": 30,
       "links": [],
-      "query": "",
-      "recent": false,
-      "search": true,
-      "starred": false,
-      "tags": ["dashboard"],
-      "title": "Cogment Dashboards",
-      "type": "dashlist"
-    },
-    {
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 19,
-        "w": 12,
-        "x": 12,
-        "y": 4
-      },
-      "id": 7,
       "options": {
-        "content": "\n<div style=\"background-image: url('https://ai-r.com/wp-content/themes/air/assets/images/hero-bg.jpg');\">\n<h1 style=\"color:black;\"> Our latest news </h1>\n<a style=\"color:blue;\" style=\"font-size:160%;\" href=\"https://ai-r.com/news/\">We need to redefine our relationship to AI.</a><br />\n<img src=\"https://ai-r.com/wp-content/uploads/2020/04/confiancepost-1024x1024.png\">\n\n",
-        "mode": "html"
+        "folderId": 1,
+        "maxItems": 30,
+        "query": "",
+        "showHeadings": false,
+        "showRecentlyViewed": false,
+        "showSearch": true,
+        "showStarred": false,
+        "tags": [
+          "dashboard"
+        ]
       },
-      "pluginVersion": "7.3.7",
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Cogment News",
-      "type": "text"
+      "pluginVersion": "7.4.2",
+      "tags": [
+        "dashboard"
+      ],
+      "title": "",
+      "transparent": true,
+      "type": "dashlist"
     }
   ],
   "refresh": false,
-  "schemaVersion": 26,
+  "schemaVersion": 27,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -120,7 +132,17 @@
       "2h",
       "1d"
     ],
-    "time_options": ["5m", "15m", "1h", "6h", "12h", "24h", "2d", "7d", "30d"],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ],
     "type": "timepicker"
   },
   "timezone": "browser",

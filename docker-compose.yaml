@@ -1,8 +1,12 @@
 version: '3.7'
 
 services:
+  cogment-dashboard:
+    build:
+      context: .
+
   dashboard:
-    image: cogment/dashboard:latest
+    image: cogment/dashboard:${DOCKER_TAG}
     build:
       context: grafana
     ports:
@@ -11,7 +15,7 @@ services:
       - metrics
 
   metrics:
-    image: cogment/metrics:latest
+    image: cogment/metrics:${DOCKER_TAG}
     build:
       context: prometheus
     volumes:
