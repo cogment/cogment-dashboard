@@ -30,7 +30,6 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'prettier',
-    'prettier/standard',
     'plugin:eslint-comments/recommended',
     'plugin:json/recommended',
   ],
