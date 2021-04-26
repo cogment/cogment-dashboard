@@ -10,6 +10,7 @@ stages:
 
 variables:
   COMPOSE_PROJECT_NAME: ${CI_JOB_ID}
+  HUSKY: 0
 
 pre:install:
   stage: .pre
