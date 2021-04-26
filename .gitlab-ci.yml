@@ -54,7 +54,7 @@ release:docker:
     - apk add docker-compose
   script:
     - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-    - docker-compose build metrics dashboard
+    - DOCKER_TAG=${CI_COMMIT_BRANCH} docker-compose build metrics dashboard
     - docker-compose push metrics dashboard
   only:
     - main
