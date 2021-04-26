@@ -1,3 +1,10 @@
+# [1.2.0-beta.1](https://github.com/cogment/cogment-dashboard/compare/v1.1.3-beta.2...v1.2.0-beta.1) (2021-04-26)
+
+
+### Features
+
+* **ci:** tag docker images with appropriate tags ([8a4c11b](https://github.com/cogment/cogment-dashboard/commit/8a4c11b381efd6033fef7322c456815b11bdfc0d))
+
 ## [1.1.3-beta.2](https://github.com/cogment/cogment-dashboard/compare/v1.1.3-beta.1...v1.1.3-beta.2) (2021-04-26)
 
 
