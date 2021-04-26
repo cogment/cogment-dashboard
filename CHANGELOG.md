@@ -1,3 +1,19 @@
+# [1.2.0](https://github.com/cogment/cogment-dashboard/compare/v1.1.2...v1.2.0) (2021-04-26)
+
+
+### Bug Fixes
+
+* docker tag ([bfa694f](https://github.com/cogment/cogment-dashboard/commit/bfa694fd35cfedc8a2b91976deda7ba3a5888a2f))
+* improved total-reward computation ([a4696c1](https://github.com/cogment/cogment-dashboard/commit/a4696c12af08763b2cad593167aa059bb6e4d98b))
+* total rewards ([457f5e9](https://github.com/cogment/cogment-dashboard/commit/457f5e9af7d57ccea833fefbea9d4d7a8e68d822))
+* total rewards ([e2be792](https://github.com/cogment/cogment-dashboard/commit/e2be7926dcc2a8d2c44986e4ba46f57b69c351dd))
+* **ci:** trigger semantic-release on beta branch ([9f244d8](https://github.com/cogment/cogment-dashboard/commit/9f244d87a9bdf747485f315b112fd3e490c177fc))
+
+
+### Features
+
+* **ci:** tag docker images with appropriate tags ([8a4c11b](https://github.com/cogment/cogment-dashboard/commit/8a4c11b381efd6033fef7322c456815b11bdfc0d))
+
 # [1.2.0-beta.1](https://github.com/cogment/cogment-dashboard/compare/v1.1.3-beta.2...v1.2.0-beta.1) (2021-04-26)
 
 
