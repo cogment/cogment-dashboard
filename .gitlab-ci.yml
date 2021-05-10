@@ -1,65 +1,107 @@
-image: docker:20.10.0
-
-default:
-  tags:
-    - ai-r
-    - docker
-
 stages:
-  - release
+  - lint
+  - build
+  - publish
 
-variables:
-  COMPOSE_PROJECT_NAME: ${CI_JOB_ID}
-  HUSKY: 0
-
-pre:install:
-  stage: .pre
-  image: node:14-alpine
-  script:
-    - npm install
-  artifacts:
-    expire_in: 1 day
-    paths:
-      - node_modules
-
-release:semantic-release:
-  stage: release
-  image: node:14-alpine
-  before_script:
-    - apk add git openssh-client
-    - mkdir -pm 0700 ~/.ssh
-    - ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
-    - ssh-keyscan github.com >> ~/.ssh/known_hosts
-    - eval $(ssh-agent -s)
-    - echo "${GIT_SSH_PRIVATE_KEY}" | ssh-add -
-  script:
-    - git checkout "${CI_COMMIT_BRANCH}"
-    - git remote add downstream git@github.com:cogment/cogment-dashboard.git
-    - git fetch downstream ${CI_COMMIT_BRANCH}
-    - git push downstream ${CI_COMMIT_BRANCH}
-    - npx semantic-release
-    - git pull downstream ${CI_COMMIT_BRANCH}
-    - git push git@gitlab.com:ai-r/cogment-dashboard.git ${CI_COMMIT_BRANCH}
-    - git fetch downstream --tags
-    - git push git@gitlab.com:ai-r/cogment-dashboard.git --tags
-  only:
-    - main
-    - next
-    - alpha
-    - beta
-
-release:docker:
-  stage: release
+.base_docker:
+  image: docker:19.03.1
+  services:
+    - docker:19.03.1-dind
+  variables:
+    # Use TLS https://docs.gitlab.com/ee/ci/docker/using_docker_build.html#tls-enabled
+    DOCKER_HOST: tcp://docker:2376
+    DOCKER_TLS_CERTDIR: '/certs'
   before_script:
     - apk add docker-compose
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_TOKEN
+
+.base_gh_ssh_agent:
+  before_script:
+    ## _Inspired by https://docs.gitlab.com/ee/ci/ssh_keys/_
+    ##
+    ## Install ssh-agent if not already installed.
+    - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
+    ## Run ssh-agent
+    - eval $(ssh-agent -s)
+    ## Add the private key file to ssh-agent
+    - echo "$GH_REPO_SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    ## Create the SSH directory and give it the right permissions
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    ## Using the set $SSH_KNOWN_HOSTS to be able to verify remote servers public keys
+    - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+
+shellcheck:
+  image: koalaman/shellcheck-alpine:stable
+  stage: lint
+  before_script:
+    - shellcheck --version
   script:
-    - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+    - shellcheck ./scripts/*.sh
+
+shfmt:
+  image: mvdan/shfmt:v3.1.0-alpine
+  stage: lint
+  before_script:
+    - shfmt -version
+  script:
+    - shfmt -i 2 -ci -d ./scripts
+
+build_docker:
+  extends: .base_docker
+  stage: build
+  script:
+    - docker-compose build metrics dashboard
+  except:
+    # This job is not run on `develop` nor `main` because publish jobs run there "includes" the build
+    - develop
+    - main
+
+publish_latest_to_gitlab_docker_registry:
+  extends: .base_docker
+  stage: publish
+  variables:
+    COGMENT_DASHBOARD_IMAGE: ${CI_REGISTRY}/${CI_PROJECT_PATH}/dashboard:latest
+    COGMENT_METRICS_IMAGE: ${CI_REGISTRY}/${CI_PROJECT_PATH}/metrics:latest
+  script:
     - docker-compose build metrics dashboard
     - docker-compose push metrics dashboard
-  rules:
-    - if: '$CI_COMMIT_TAG =~ /^v[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+(-[[:alnum:]]+)?$/'
-      variables:
-        DOCKER_TAG: '${CI_COMMIT_TAG}'
-    - if: '$CI_COMMIT_BRANCH =~ /^(alpha|beta|next|main)$/'
-      variables:
-        DOCKER_TAG: '${CI_COMMIT_BRANCH}'
+  only:
+    - develop
+
+publish_tag_to_gitlab_docker_registry:
+  extends: .base_docker
+  stage: publish
+  variables:
+    COGMENT_DASHBOARD_IMAGE: ${CI_REGISTRY}/${CI_PROJECT_PATH}/dashboard:$CI_COMMIT_TAG
+    COGMENT_METRICS_IMAGE: ${CI_REGISTRY}/${CI_PROJECT_PATH}/dashboard:$CI_COMMIT_TAG
+  script:
+    - docker-compose build metrics dashboard
+    - docker-compose push metrics dashboard
+  only:
+    - /^v[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+(?:-[[:alnum:]]+)?$/
+
+publish_tag_to_dockerhub:
+  extends: .base_docker
+  stage: publish
+  variables:
+    COGMENT_DASHBOARD_IMAGE: cogment/dashboard:$CI_COMMIT_TAG
+    COGMENT_METRICS_IMAGE: cogment/dashboard:$CI_COMMIT_TAG
+  script:
+    - docker-compose build metrics dashboard
+    - docker-compose push metrics dashboard
+  only:
+    - /^v[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+(?:-[[:alnum:]]+)?$/
+
+publish_branch_to_github:
+  extends: .base_gh_ssh_agent
+  stage: publish
+  script:
+    - git checkout ${CI_COMMIT_BRANCH} # Checkout the branch not the sha1
+    - git remote add downstream git@github.com:cogment/cogment-orchestrator.git
+    - git fetch downstream ${CI_COMMIT_BRANCH}
+    - git push --tags downstream ${CI_COMMIT_BRANCH}:${CI_COMMIT_BRANCH}
+  only:
+    - main

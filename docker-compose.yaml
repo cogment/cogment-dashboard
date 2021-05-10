@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   dashboard:
-    image: cogment/dashboard:${DOCKER_TAG}
+    image: ${COGMENT_DASHBOARD_IMAGE}
     build:
       context: grafana
     ports:
@@ -11,7 +11,7 @@ services:
       - metrics
 
   metrics:
-    image: cogment/metrics:${DOCKER_TAG}
+    image: ${COGMENT_METRICS_IMAGE}
     build:
       context: prometheus
     volumes:
