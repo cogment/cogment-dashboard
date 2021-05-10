@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   dashboard:
-    image: ${COGMENT_DASHBOARD_IMAGE}
+    image: ${COGMENT_DASHBOARD_IMAGE_PATH}dashboard:${COGMENT_DASHBOARD_VERSION}
     build:
       context: grafana
     ports:
@@ -11,7 +11,7 @@ services:
       - metrics
 
   metrics:
-    image: ${COGMENT_METRICS_IMAGE}
+    image: ${COGMENT_DASHBOARD_IMAGE_PATH}metrics:${COGMENT_DASHBOARD_VERSION}
     build:
       context: prometheus
     volumes:
