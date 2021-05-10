@@ -94,14 +94,10 @@
         "showRecentlyViewed": false,
         "showSearch": true,
         "showStarred": false,
-        "tags": [
-          "dashboard"
-        ]
+        "tags": ["dashboard"]
       },
       "pluginVersion": "7.4.2",
-      "tags": [
-        "dashboard"
-      ],
+      "tags": ["dashboard"],
       "title": "",
       "transparent": true,
       "type": "dashlist"
@@ -132,17 +128,7 @@
       "2h",
       "1d"
     ],
-    "time_options": [
-      "5m",
-      "15m",
-      "1h",
-      "6h",
-      "12h",
-      "24h",
-      "2d",
-      "7d",
-      "30d"
-    ],
+    "time_options": ["5m", "15m", "1h", "6h", "12h", "24h", "2d", "7d", "30d"],
     "type": "timepicker"
   },
   "timezone": "browser",
