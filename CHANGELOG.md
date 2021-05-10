@@ -1,3 +1,17 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+This file is generated from the commit history following the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) guidelines and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+## [1.2.1](https://github.com/cogment/cogment-dashboard/compare/v1.2.0...v1.2.1) (2021-05-10)
+
+
+### Bug Fixes
+
+* Harmonize displayed time ([fcba510](https://github.com/cogment/cogment-dashboard/commit/fcba510d180efd5ebe38d3d829c5ed67da170012))
+
+
+
 # [1.2.0](https://github.com/cogment/cogment-dashboard/compare/v1.1.2...v1.2.0) (2021-04-26)
 
 
