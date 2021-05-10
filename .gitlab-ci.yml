@@ -49,6 +49,14 @@ shfmt:
   script:
     - shfmt -i 2 -ci -d ./scripts
 
+npm_run_lint:
+  image: node:14-alpine
+  stage: lint
+  before_script:
+    - npm ci
+  script:
+    - npm run lint
+
 build_docker:
   extends: .base_docker
   stage: build
