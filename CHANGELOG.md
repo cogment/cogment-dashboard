@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 
 This file is generated from the commit history following the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) guidelines and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+## [1.2.3](https://github.com/cogment/cogment-dashboard/compare/v1.2.2...v1.2.3) (2021-05-11)
+
+
+### Bug Fixes
+
+* Publish `latest` versions of metrics and dashboard to dockerhub ([c9d10f0](https://github.com/cogment/cogment-dashboard/commit/c9d10f0e3d6c8d2ab65cdff61cada29b6711e452))
+
+
+
 ## [1.2.2](https://github.com/cogment/cogment-dashboard/compare/v1.2.0...v1.2.2) (2021-05-11)
 
 
