@@ -78,6 +78,7 @@ publish_latest_to_gitlab_docker_registry:
     - docker-compose push metrics dashboard
   only:
     - develop
+    - main
 
 publish_tag_to_gitlab_docker_registry:
   extends: .base_docker
@@ -90,6 +91,18 @@ publish_tag_to_gitlab_docker_registry:
     - docker-compose push metrics dashboard
   only:
     - /^v[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+(?:-[[:alnum:]]+)?$/
+
+publish_latest_to_dockerhub:
+  extends: .base_docker
+  stage: publish
+  variables:
+    COGMENT_DASHBOARD_VERSION: latest
+    COGMENT_DASHBOARD_IMAGE_PATH: cogment/
+  script:
+    - docker-compose build metrics dashboard
+    - docker-compose push metrics dashboard
+  only:
+    - main
 
 publish_tag_to_dockerhub:
   extends: .base_docker
