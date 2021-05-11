@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 
 This file is generated from the commit history following the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) guidelines and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+## [1.2.2](https://github.com/cogment/cogment-dashboard/compare/v1.2.0...v1.2.2) (2021-05-11)
+
+
+### Bug Fixes
+
+* fix the release name for the metrics image to `cogment/metrics` ([5632651](https://github.com/cogment/cogment-dashboard/commit/5632651a26788be9930236a90c4ab1b65d7c0828))
+
+
 ## [1.2.1](https://github.com/cogment/cogment-dashboard/compare/v1.2.0...v1.2.1) (2021-05-10)
 
 
